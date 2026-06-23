@@ -123,21 +123,21 @@ The barrier gate remains closed when no vehicle is detected or when all parking 
 ### Barrier Open
 The barrier gate opens automatically when an incoming vehicle is detected and parking space is available.
 
-![Barrier Open](images/image2.jpg)
+![Barrier Open](images/second.jpg)
 
 ---
 
 ### Circuit Wiring
 Wiring connections between the Arduino Uno, ultrasonic sensors, servo motor, and breadboard.
 
-![Circuit Wiring](images/image3.jpg)
+![Circuit Wiring](images/third.jpg)
 
 ---
 
 ### Complete Hardware Setup
 Complete prototype of the Smart Parking System showing the parking area, sensors, gate mechanism, and controller setup.
 
-![Hardware Setup](images/image4.jpg)
+![Hardware Setup](images/fourth.jpg)
 
 ---
 

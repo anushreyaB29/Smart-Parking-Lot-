@@ -141,6 +141,14 @@ Complete prototype of the Smart Parking System showing the parking area, sensors
 
 ---
 
+## 🎥 Demonstration Video
+
+Watch the complete working demonstration here:
+
+🔗 [Google Drive Video](https://drive.google.com/file/d/18kqvUHwr1HPHfA3ltZIuDfkGCCEH63Fe/view?usp=drivesdk)
+
+---
+
 ## 🎯 Applications
 
 - Shopping Malls

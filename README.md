@@ -1,17 +1,18 @@
 # 🚗 Smart Parking System using Arduino
 
-An Arduino-based Smart Parking System that automates vehicle entry and exit while managing parking occupancy for **three parking slots**. The system uses ultrasonic sensors to detect incoming and outgoing vehicles and controls a servo-operated barrier gate based on parking availability.
+An Arduino-based **Smart Parking System** designed to automate vehicle entry and exit management for a parking lot with a capacity of **three vehicles**. The system uses **two ultrasonic sensors** to detect incoming and outgoing vehicles and a **servo motor** to control the barrier gate based on parking availability.
 
 ---
 
 ## 📌 Features
 
-- 🚘 Detects vehicles approaching the entrance
-- 🚪 Automatically opens the barrier gate if parking space is available
-- 🚗 Detects vehicles leaving the parking area
-- 📊 Maintains real-time occupancy count
-- 🅿️ Supports a parking lot with **3 slots**
-- 🔒 Prevents entry when all slots are occupied
+- 🚘 Automatic vehicle detection at the entrance
+- 🚪 Servo-controlled barrier gate
+- 🅿️ Real-time occupancy management for **3 parking slots**
+- 🚗 Automatic vehicle exit detection
+- 🔒 Prevents entry when the parking lot is full
+- ⚡ Low-cost and easy-to-build prototype
+- 🏙️ Demonstrates concepts used in Smart City parking solutions
 
 ---
 
@@ -31,26 +32,27 @@ An Arduino-based Smart Parking System that automates vehicle entry and exit whil
 ## ⚙️ Working Principle
 
 ### Vehicle Entry
-An ultrasonic sensor placed near the entrance detects an approaching vehicle.
+An ultrasonic sensor placed near the entrance continuously monitors approaching vehicles.
 
-- If occupied slots < 3
-  - Gate opens
-  - Vehicle enters
-  - Occupancy count increases
-  - Gate closes automatically
-
-- If occupied slots = 3
-  - Gate remains closed
-  - No additional vehicle is allowed
-
----
+- If the number of occupied slots is less than **3**, the servo motor opens the barrier gate.
+- After the vehicle enters, the occupancy count is increased by one.
+- The gate then closes automatically.
 
 ### Vehicle Exit
-A second ultrasonic sensor placed near the exit detects vehicles leaving.
+A second ultrasonic sensor is positioned near the exit.
 
-When a vehicle passes:
-- Occupancy count decreases
-- A parking slot becomes available
+- When a vehicle is detected leaving the parking lot, the occupancy count is decreased by one.
+- The parking lot becomes available for another incoming vehicle.
+
+### Parking Capacity
+The parking system supports a maximum of **3 vehicles**.
+
+| Occupied Slots | Available Slots |
+|---------------|----------------|
+| 0 | 3 |
+| 1 | 2 |
+| 2 | 1 |
+| 3 | 0 |
 
 ---
 
@@ -68,30 +70,13 @@ When a vehicle passes:
 
 ---
 
-## 🅿️ Parking Capacity
-
-Total Parking Slots : **3**
-
-Occupancy is maintained internally by the Arduino program.
-
-Example:
-
-| Cars Parked | Available Slots |
-|------------|----------------|
-| 0 | 3 |
-| 1 | 2 |
-| 2 | 1 |
-| 3 | 0 |
-
----
-
 ## 🚀 System Flow
 
 ```text
 Vehicle Approaches Entrance
             │
             ▼
-Entry Sensor Detects Vehicle
+Entry Ultrasonic Detects Vehicle
             │
             ▼
 Occupied Slots < 3 ?
@@ -115,14 +100,44 @@ Close Gate
 Vehicle Approaches Exit
             │
             ▼
-Exit Sensor Detects Vehicle
+Exit Ultrasonic Detects Vehicle
             │
             ▼
 Occupied Count--
             │
             ▼
-Parking Space Available
+Parking Slot Available
 ```
+
+---
+
+## 📷 Project Demonstration
+
+### Barrier Closed
+The barrier gate remains closed when no vehicle is detected or when all parking slots are occupied.
+
+![Barrier Closed](images/image1.jpg)
+
+---
+
+### Barrier Open
+The barrier gate opens automatically when an incoming vehicle is detected and parking space is available.
+
+![Barrier Open](images/image2.jpg)
+
+---
+
+### Circuit Wiring
+Wiring connections between the Arduino Uno, ultrasonic sensors, servo motor, and breadboard.
+
+![Circuit Wiring](images/image3.jpg)
+
+---
+
+### Complete Hardware Setup
+Complete prototype of the Smart Parking System showing the parking area, sensors, gate mechanism, and controller setup.
+
+![Hardware Setup](images/image4.jpg)
 
 ---
 
@@ -131,18 +146,19 @@ Parking Space Available
 - Shopping Malls
 - Residential Complexes
 - Office Buildings
-- Colleges and Universities
+- Educational Institutions
 - Smart City Parking Systems
 
 ---
 
 ## 🔮 Future Enhancements
 
-- LCD display for available spaces
-- RFID authentication
-- ESP32 Wi-Fi monitoring
+- LCD display for available parking spaces
+- RFID-based authentication
+- ESP32 Wi-Fi connectivity
 - Mobile application integration
-- Multiple entry and exit lanes
+- Cloud-based parking monitoring
+- Support for multiple entry and exit lanes
 
 ---
 
@@ -153,6 +169,7 @@ Developed as an Arduino-based embedded systems project demonstrating:
 - Sensor Interfacing
 - Servo Motor Control
 - Occupancy Management
+- Embedded Programming
 - Automation Techniques
 - Smart Parking Concepts
 
